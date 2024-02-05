@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465788, g: 0.49641287, b: 0.5748173, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 864338963}
   - component: {fileID: 864338962}
   - component: {fileID: 864338961}
+  - component: {fileID: 864338964}
   m_Layer: 5
   m_Name: btnApple
   m_TagString: Untagged
@@ -657,7 +658,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1350991675}
+      - m_Target: {fileID: 864338964}
         m_TargetAssemblyTypeName: LoadNewScene, Assembly-CSharp
         m_MethodName: LoadMod1Scene
         m_Mode: 5
@@ -666,7 +667,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main-ApplePicker
+          m_StringArgument: ApplePicker
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &864338962
@@ -707,6 +708,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864338959}
   m_CullTransparentMesh: 0
+--- !u!114 &864338964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864338959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8ffc0f9053a4a7489cc52c960c67b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1230220658
 GameObject:
   m_ObjectHideFlags: 0

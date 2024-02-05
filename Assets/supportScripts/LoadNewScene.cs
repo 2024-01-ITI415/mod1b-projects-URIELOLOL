@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class LoadNewScene : MonoBehaviour
 {
 
-    public void LoadMod1Scene(string sceneToLoad)
+    public void LoadMod1Scene(string ApplePicker)
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene(ApplePicker);
     }
 
 }
