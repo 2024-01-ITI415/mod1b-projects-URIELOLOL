@@ -5,7 +5,6 @@ using UnityEngine;
 public class AppleTree : MonoBehaviour
 {
     // Start is called before the first frame update
-    [Header("Set in Inspector")]
     // Prefab for instantiating apples
     public GameObject applePrefab;
     // Prefab for instantiating apples
@@ -50,6 +49,7 @@ public class AppleTree : MonoBehaviour
     void FixedUpdate()
     {
         // Changing Direction Randomly is now time-based because of FixedUpdate()
+
         if ( Random.value < chanceToChangeDirections)
         {
             speed *= -1; // Change direction
