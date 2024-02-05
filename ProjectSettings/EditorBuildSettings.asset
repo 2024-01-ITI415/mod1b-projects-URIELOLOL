@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scene_0/Main-Prototype 1.unity
     guid: 84930580229bb4f138179e160aab9b89
-  - enabled: 1
+  - enabled: 0
     path: Assets/01-Apple Picker/ApplePicker.unity
     guid: a5972a3aebd1e224cb8aa923f66708ac
   m_configObjects: {}
