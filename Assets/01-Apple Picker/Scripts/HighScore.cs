@@ -1,24 +1,27 @@
 using System.Collections;
+
 using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI;
+
+using UnityEngine.UI;    // Remember, we need this line for uGUI to work.
 
 
 
 public class HighScore : MonoBehaviour
 {
 
-    static public int score = 100;
+    static public int score = 1000;
 
 
 
     void Awake()
-    {
+    {                                                           // a
 
         // If the PlayerPrefs HighScore already exists, read it
 
         if (PlayerPrefs.HasKey("HighScore"))
-        {
+        {                               // b
 
             score = PlayerPrefs.GetInt("HighScore");
 
@@ -41,8 +44,8 @@ public class HighScore : MonoBehaviour
 
         // Update the PlayerPrefs HighScore if necessary
 
-        if ( score > PlayerPrefs.GetInt("HighScore"))
-        {
+        if (score > PlayerPrefs.GetInt("HighScore"))
+        {                       // d
 
             PlayerPrefs.SetInt("HighScore", score);
 
