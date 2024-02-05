@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HighScore : MonoBehaviour
 {
 
-    static public int score = 1000;
+    static public int score = 100;
 
 
 
@@ -41,8 +41,8 @@ public class HighScore : MonoBehaviour
 
         // Update the PlayerPrefs HighScore if necessary
 
-        if (score > PlayerPrefs.GetInt("HighScore"))
-        {                       // d
+        if ( score > PlayerPrefs.GetInt("HighScore"))
+        {
 
             PlayerPrefs.SetInt("HighScore", score);
 

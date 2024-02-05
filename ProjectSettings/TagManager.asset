@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Apple
   - HighScore
+  - ScoreCounter
   layers:
   - Default
   - TransparentFX
