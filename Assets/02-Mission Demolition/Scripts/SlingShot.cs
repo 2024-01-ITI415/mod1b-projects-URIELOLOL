@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SlingShot : MonoBehaviour
 {
+    static private Slingshot S;
     Behaviour halo;
 
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
     public float velocityMult = 8f;
 
-    [Header("Set in Inspector")]
+    [Header("Set in Dynamically")]
     public Vector3 launchPos;
     public GameObject projectile;
     public bool aimingMode;
@@ -18,9 +19,18 @@ public class SlingShot : MonoBehaviour
     private Rigidbody projectileRigidbody;
     // Start is called before the first frame update
 
-    private void Awake()
+    static public Vector3 LAUNCH_POS
     {
-        launchPoint = GameObject.Find("LaunchPoint");
+        get
+        {
+            if (S == null) return Vector3.zero;
+            return S.launchPos;
+        }
+    }
+    void Awake()
+    {
+        S = this;
+        Transform launchPointTrans = transform.FindChild("LaunchPoint");
         halo = (Behaviour)launchPoint.GetComponent("Halo");
         halo.enabled = false;
 
