@@ -11,4 +11,14 @@ public class LoadNewScene : MonoBehaviour
         SceneManager.LoadScene(ApplePicker);
     }
 
+    public void LoadMod2Scene(string MissionDemolition)
+    {
+        SceneManager.LoadScene(MissionDemolition);
+
+    }
+    public void LoadMod3Scene(string Prototype1)
+    {
+        SceneManager.LoadScene(Prototype1);
+
+    }
 }
