@@ -8,6 +8,7 @@ TagManager:
   - HighScore
   - ScoreCounter
   - projectile
+  - Projectile
   layers:
   - Default
   - TransparentFX

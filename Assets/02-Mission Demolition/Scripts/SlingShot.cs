@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlingShot : MonoBehaviour
+public class Slingshot : MonoBehaviour
 {
     static private Slingshot S;
     Behaviour halo;
@@ -10,13 +10,16 @@ public class SlingShot : MonoBehaviour
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
     public float velocityMult = 8f;
+    private Rigidbody projectileRigidbody;
 
     [Header("Set in Dynamically")]
-    public Vector3 launchPos;
-    public GameObject projectile;
-    public bool aimingMode;
     public GameObject launchPoint;
-    private Rigidbody projectileRigidbody;
+
+    public Vector3 launchPos;                                   // b
+
+    public GameObject projectile;                                  // b
+
+    public bool aimingMode;
     // Start is called before the first frame update
 
     static public Vector3 LAUNCH_POS
@@ -27,14 +30,14 @@ public class SlingShot : MonoBehaviour
             return S.launchPos;
         }
     }
+
     void Awake()
     {
         S = this;
-        Transform launchPointTrans = transform.FindChild("LaunchPoint");
-        halo = (Behaviour)launchPoint.GetComponent("Halo");
-        halo.enabled = false;
-
-        launchPos = launchPoint.transform.position;
+        Transform launchPointTrans = transform.Find("LaunchPoint");
+        launchPoint = launchPointTrans.gameObject;
+        launchPoint.SetActive(false);
+        launchPos = launchPointTrans.position;
     }
     void Start()
     {
@@ -69,19 +72,22 @@ public class SlingShot : MonoBehaviour
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
             FollowCam.POI = projectile;
             projectile = null;
+
+            MissionDemolition.ShotFired();
+            ProjectileLine.S.poi = projectile;
         }
     }
 
     private void OnMouseEnter()
     {
         //print("OnMouseEnter");
-        halo.enabled = true;
+        launchPoint.SetActive(true);
     }
 
     private void OnMouseExit()
     {
         //print("OnMouseExit");
-        halo.enabled = false;
+        launchPoint.SetActive(false);
     }
 
     private void OnMouseDown()
