@@ -9,6 +9,8 @@ TagManager:
   - ScoreCounter
   - projectile
   - Projectile
+  - Ground
+  - floor
   layers:
   - Default
   - TransparentFX
